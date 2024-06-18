@@ -37,4 +37,4 @@ out/
 .vscode/
 
 # Added to prevent API key exposure
-**/src/main/java/APIKEY.java
+**/src/main/java/**/APIKEY.java
