@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-</beans>
+<mapper namespace="com.icia.weatherhelper.dao.UserDao">
+    <insert id="createUser" parameterType="com.icia.weatherhelper.dto.UserDTO">
+        INSERT INTO user
+        (user_email, user_password, user_nickname, user_longitude, user_latitude, user_detail, user_image)
+        VALUES (userEmail, userPassword, userNickname, longitude, latitude, userDetail, userImage)
+    </insert>
+
+</mapper>
