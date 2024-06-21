@@ -40,7 +40,7 @@ public class SignRestController {
         return arr[1];
     }
 
-    // 이미지 체크 메서드
+    // 이메일 체크 메서드
     @PostMapping("/emailCheck")
     @ResponseBody
     public String emailCheck(@RequestParam("email") String email) {

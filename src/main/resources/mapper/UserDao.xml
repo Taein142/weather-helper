@@ -6,7 +6,14 @@
     <insert id="createUser" parameterType="com.icia.weatherhelper.dto.UserDTO">
         INSERT INTO user
         (user_email, user_password, user_nickname, user_longitude, user_latitude, user_detail, user_image)
-        VALUES (userEmail, userPassword, userNickname, longitude, latitude, userDetail, userImage)
+        VALUES (#{userEmail}, #{userPassword}, #{userNickname}, #{longitude}, #{latitude}, #{userDetail}, #{userImage})
     </insert>
+    <select id="emailCheck" parameterType="java.lang.String" resultType="int">
+        SELECT count(*) FROM user WHERE user_email = #{email}
+    </select>
+    <select id="getImageAddress">
+        SELECT image_address FROM images
+        WHERE image_id = #{imageNum}
+    </select>
 
 </mapper>
