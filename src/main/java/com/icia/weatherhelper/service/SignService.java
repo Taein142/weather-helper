@@ -56,6 +56,7 @@ public class SignService {
 
     // 이미지 가져오는 메서드
     private String getImageAddress(int imageNum) {
+        log.info("getImageAddress");
         return userDao.getImageAddress(imageNum);
     }
 
