@@ -1,6 +1,7 @@
 package com.icia.weatherhelper.service;
 
 import com.icia.weatherhelper.dao.UserDao;
+import com.icia.weatherhelper.dto.RoleDTO;
 import com.icia.weatherhelper.dto.UserDTO;
 import com.icia.weatherhelper.util.GeocoderUtil;
 import lombok.extern.slf4j.Slf4j;

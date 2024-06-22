@@ -19,6 +19,7 @@ public class UserDTO {
     private String userStatus;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
     private LocalDateTime createdAt;
+    private int user_role;
 
     public UserDTO(String userEmail, String userPassword, String userNickname, Double longitude, Double latitude, String userDetail, String userImage) {
         this.user_email = userEmail;
