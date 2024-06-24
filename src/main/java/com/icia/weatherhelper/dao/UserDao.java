@@ -3,6 +3,8 @@ package com.icia.weatherhelper.dao;
 import com.icia.weatherhelper.dto.UserDTO;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.Optional;
+
 @Mapper
 public interface UserDao {
     void createUser(UserDTO user);
@@ -11,5 +13,5 @@ public interface UserDao {
 
     int findRoleByEmail(String userEmail);
 
-    <T> ScopedValue<T> findUserByEmail(String username);
+    Optional<UserDTO> findUserByEmail(String username);
 }
