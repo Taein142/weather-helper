@@ -9,8 +9,6 @@ public interface UserDao {
 
     int emailCheck(String email);
 
-    String getImageAddress(int imageNum);
-
     int findRoleByEmail(String userEmail);
 
     <T> ScopedValue<T> findUserByEmail(String username);
