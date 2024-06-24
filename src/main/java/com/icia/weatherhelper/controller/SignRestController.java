@@ -2,12 +2,15 @@ package com.icia.weatherhelper.controller;
 
 import com.icia.weatherhelper.service.SignService;
 import lombok.extern.slf4j.Slf4j;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.io.IOException;
 
 @RestController
 @Slf4j
@@ -26,7 +29,7 @@ public class SignRestController {
             @RequestParam String user_detail,
             @RequestParam(defaultValue = "0") int imageNum,
             @RequestParam boolean agreeToTerms,
-            RedirectAttributes rttr) {
+            RedirectAttributes rttr) throws IOException, ParseException, InterruptedException {
         log.info("createUser()");
 
         if (!agreeToTerms) {

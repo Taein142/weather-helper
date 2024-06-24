@@ -1,14 +1,17 @@
 package com.icia.weatherhelper.service;
 
+import com.icia.weatherhelper.dao.ImagesDao;
 import com.icia.weatherhelper.dao.UserDao;
 import com.icia.weatherhelper.dto.RoleDTO;
 import com.icia.weatherhelper.dto.UserDTO;
 import com.icia.weatherhelper.util.GeocoderUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.Map;
 
 @Service
@@ -17,11 +20,13 @@ public class SignService {
 
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private ImagesDao imagesDao;
 
     @Autowired
     private GeocoderUtil geocoderUtil;
 
-    public String[] createUser(String userEmail, String domain, String userPassword, String userNickname, String address, String userDetail, int imageNum) {
+    public String[] createUser(String userEmail, String domain, String userPassword, String userNickname, String address, String userDetail, int imageNum) throws IOException, ParseException, InterruptedException {
         log.info("createUser - service");
 
         String msg = "회원가입 성공";
@@ -58,7 +63,7 @@ public class SignService {
     // 이미지 가져오는 메서드
     private String getImageAddress(int imageNum) {
         log.info("getImageAddress");
-        return userDao.getImageAddress(imageNum);
+        return imagesDao.getImageURL(imageNum);
     }
 
     // 이메일 체크 메서드
