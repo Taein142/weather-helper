@@ -11,10 +11,6 @@
     <select id="emailCheck" parameterType="String" resultType="Integer">
         SELECT count(*) FROM user WHERE user_email = #{email}
     </select>
-    <select id="getImageAddress">
-        SELECT image_address FROM images
-        WHERE image_id = #{imageNum}
-    </select>
     <select id="findRoleByEmail" parameterType="String" resultType="Integer">
         SELECT user_role FROM user
         WHERE user_email = #{userEmail}
