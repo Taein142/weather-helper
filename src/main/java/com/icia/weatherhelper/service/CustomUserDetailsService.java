@@ -22,7 +22,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Setter(onMethod_ = {@Autowired})
     private UserDao userDao;
     @Setter(onMethod_ = {@Autowired})
-    private RoleDao roleDao; // 추가: role 테이블 접근 위한 Dao 주입
+    private RoleDao roleDao;
 
     public CustomUserDetailsService() {
         log.info("CustomUserDetailsServiceForUser");
