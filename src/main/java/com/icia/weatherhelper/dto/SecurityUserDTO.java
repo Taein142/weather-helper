@@ -1,7 +1,5 @@
 package com.icia.weatherhelper.dto;
 
-import com.icia.weatherhelper.dto.RoleDTO;
-import com.icia.weatherhelper.dto.UserDTO;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;

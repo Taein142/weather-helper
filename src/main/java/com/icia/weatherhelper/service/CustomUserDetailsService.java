@@ -13,14 +13,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.Objects;
-
-@Service
 @Slf4j
+@Service
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Setter(onMethod_ = {@Autowired})
     private UserDao userDao;
+
     @Setter(onMethod_ = {@Autowired})
     private RoleDao roleDao;
 
@@ -39,6 +38,5 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + userEmail));
 
         return new SecurityUserDTO(userDTO, roleDTO);
-
     }
 }
