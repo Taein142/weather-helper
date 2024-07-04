@@ -1,0 +1,17 @@
+#version: '3'
+#
+#services:
+#  db:
+#    image: mysql
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=1234
+#    ports:
+#      - "3306:3306"
+#
+#  web:
+#    build:
+#      dockerfile: ./Dockerfile
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - db

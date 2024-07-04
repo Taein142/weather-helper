@@ -1,7 +1,9 @@
-package com.icia.weatherhelper.service;
-
-import org.springframework.stereotype.Service;
-
-@Service
-public class PlacesService {
-}
+//package com.icia.weatherhelper.service;
+//
+//import lombok.extern.slf4j.Slf4j;
+//import org.springframework.stereotype.Service;
+//
+//@Slf4j
+//@Service
+//public class PlacesService {
+//}

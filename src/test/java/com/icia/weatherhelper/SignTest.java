@@ -1,4 +1,4 @@
-package com.icia.weatherhelper;
-
-public class SignTest {
-}
+//package com.icia.weatherhelper;
+//
+//public class SignTest {
+//}
