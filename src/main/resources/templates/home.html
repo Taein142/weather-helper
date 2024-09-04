@@ -2,13 +2,69 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Weather Helper</title>
+    <title>날씨 알림이</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .error-message {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h2>안녕</h2>
-    <h3>지금은 공사중이야</h3>
-    <h3>다른 길로 돌아가길 바래</h3>
+<h1>전국 날씨 정보</h1>
+
+<div th:if="${#maps.isEmpty(weatherData)}" class="error-message">
+    <p>날씨 정보를 가져오는 중에 오류가 발생했습니다.</p>
+</div>
+
+<div th:if="${not #maps.isEmpty(weatherData)}">
+    <table>
+        <thead>
+        <tr>
+            <th>도시</th>
+            <th>시간</th>
+            <th>날씨</th>
+            <th>기온(℃)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="weatherInfo : ${weatherData}">
+            <td th:text="${weatherInfo.key}"></td>
+<!--            <td>-->
+<!--                <span th:each="item : ${weatherInfo.value}">-->
+<!--                    <span th:text="${item.baseDate} + ' ' + ${item.baseTime}"></span><br>-->
+<!--                </span>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--        <span th:each="item : ${weatherInfo.value}">-->
+<!--            <span th:text="${item.category}"></span><br>-->
+<!--        </span>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--        <span th:each="item : ${weatherInfo.value}">-->
+<!--            <span th:text="${item.obsrValue}"></span><br>-->
+<!--        </span>-->
+<!--            </td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
